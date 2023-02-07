@@ -1,9 +1,9 @@
-//Week 5 Coding Assignment - Menu App
+/* Week 5 Coding Assignment - create a menu app as seen in the instructional video. Use at least one array;
+use at least two classes. Your menu should have the options to create, view, and delete elements */
 
-/*The code below creates a menu app for smoothies.
-This code contains three classes: 1- for a list of ingredients, 2- for smoothie name, and 
-3- the actual menu. Several methods were added to some of the classes for proper functionality
-of the app.*/
+/*The code below creates a menu app for smoothies. There are three classes: 1- for a list of ingredients,
+2- for smoothie name, and 3- for the actual menu. Several methods were added to some of the classes
+for proper app functionality.*/
 
 //SECTION - Class for list of smoothie ingredients:
 class Ingredient {
@@ -93,7 +93,7 @@ class Menu {
 
   //ANCHOR - A method to list all of the smoothies:
   displaySmoothies() {
-    let smoothieString = ""; //building a string that contains all the data for the smoothies
+    let smoothieString = ""; //building a string that contains all the smoothie names
       for (let i = 0; i < this.smoothies.length; i++) {
         smoothieString += i + ") " + this.smoothies[i].name + "\n"; //array of smoothie names 
     }
@@ -135,10 +135,10 @@ class Menu {
       let selection = this.SmoothieMenuOptions(description); 
       switch (selection ) {
         case "1":
-          this.createIngredient();
+          this.createIngredientsList();
           break;
         case "2":
-          this.deleteIngredient();
+          this.deleteIngredientsList();
       }
     }
   }
@@ -152,7 +152,7 @@ class Menu {
   }
 
   //ANCHOR - A method for creating a list of ingredients:
-  createIngredient() {
+  createIngredientsList() {
     let proteinPowder = prompt("Enter protein powder:");
     let fruits = prompt("Enter fruits:");
     let greens = prompt("Enter greens:");
@@ -164,7 +164,7 @@ class Menu {
   }
 
   //ANCHOR - A method for deleting a list of ingredients:
-  deleteIngredient() {
+  deleteIngredientsList() {
     let index = prompt(
       "Enter index number to delete an ingredients list:"
     );
@@ -174,6 +174,6 @@ class Menu {
 } 
 } //NOTE - End of Class Menu
 
-//SECTION - A method to create an instance of the menu app and mplementation of the app:
+//SECTION - A method to create an instance of the menu app and implementation of the app:
 let menu = new Menu(); 
 menu.start(); 
